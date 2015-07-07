@@ -10,6 +10,8 @@
 def enum_max_sub(array):
 	max = 0
 	sum = 0
+	index_low = 0
+	index_hi = 0
 	#for each combination of i & j bounded by the length of the array
 	for i in range(0, len(array)):
 		for j in range(0, len(array)):
@@ -19,10 +21,20 @@ def enum_max_sub(array):
 				for k in range(i, j):
 					sum = sum + array[k]
 			#if new sum is larger than all previous, save
+			#along with the current lo and hi indices
 			if max < sum:
 				max = sum
-			#reset sum
+				index_lo = i
+				index_hi = j					
+				
+				#reset sum
 			sum = 0
+	# print the max subarray itself before returning from function
+	print 'The maximum subarray is: { ',	
+	for i in range(index_lo, index_hi):
+		print array[i],
+	print ' } \n'	
+
 	return max
 
 
@@ -32,4 +44,4 @@ testArray = [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
 print 'Testing Enumeration Function on Array:'
 print testArray, '\n'
 result = enum_max_sub(testArray)
-print 'The maximum subarray is: ', result, '\n'
+print 'The sum of the maximum subarray is: ', result, '\n'
