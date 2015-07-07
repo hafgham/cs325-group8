@@ -9,6 +9,8 @@
 
 def better_enum_max_sub(array):
 	max = 0
+	index_lo = 0
+	index_hi = 0
 	#for each combination of i & j where i < j
 	for i in range(0, len(array)):
 		#reset sum
@@ -19,6 +21,14 @@ def better_enum_max_sub(array):
 			#if new sum is larger than all previous, save
 			if max < sum:
 				max = sum
+				index_lo = i
+				index_hi = j+1 
+
+	print 'The maximum subarray is: { ',
+        for i in range(index_lo, index_hi):
+                print array[i],
+        print ' } \n'
+
 	return max
 
 
@@ -28,4 +38,4 @@ testArray = [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
 print 'Testing Better Enumeration Function on Array:'
 print testArray, '\n'
 result = better_enum_max_sub(testArray)
-print 'The maximum subarray is: ', result, '\n'
+print 'The sum of the maximum subarray is: ', result, '\n'
