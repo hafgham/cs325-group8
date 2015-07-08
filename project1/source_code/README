@@ -11,8 +11,8 @@ the command line in the following way:
 
 		python group8_project1.py <name_of_file.txt>
 
-	If the assignment/project requirements are correct then <name_of_file.txt> will
-be MSS_Problems.txt. 
+	If the assignment/project requirements are correct then <name_of_file.txt> 
+will be MSS_Problems.txt. 
 -------------------------------------------------------------------------------
 
 Unpacking/Unzipping Program:
