@@ -1,13 +1,12 @@
 #!/usr/bin/python
 #usage: python divide_conquer.py
 ###############################################################################
+from sys import maxint
 
 #function:	divide_conquer_max_sub
 #args:		integer array, length of array
 #returns:	maximum sum of all subarrays
 ###############################################################################
-from sys import maxint
-
 def divide_conquer_max_sub(array, array_len):
 	# Base case
 	if array_len == 1:

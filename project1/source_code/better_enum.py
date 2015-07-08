@@ -1,13 +1,12 @@
 #!/usr/bin/python
 #usage: python better_enum.py
 ###############################################################################
+from sys import maxint
 
 #function:	better_enum_max_sub
 #args:		integer array
 #returns:	max(sum of all sub arrays)
 ###############################################################################
-from sys import maxint
-
 def better_enum_max_sub(array):
 	max = -maxint - 1
 	index_lo = 0

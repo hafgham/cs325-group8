@@ -1,13 +1,12 @@
 #!/usr/bin/python
 #usage: python enumeration.py
 ###############################################################################
+from sys import maxint
 
 #function:	enum_max_sub
 #args:		integer array
 #returns:	max(sum of all sub arrays)
 ###############################################################################
-from sys import maxint
-
 def enum_max_sub(array):
 	#make max most negative possible int value
 	max = -maxint - 1
