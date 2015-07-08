@@ -6,9 +6,11 @@
 #args:		integer array
 #returns:	max(sum of all sub arrays)
 ###############################################################################
+from sys import maxint
 
 def enum_max_sub(array):
-	max = 0
+	#make max most negative possible int value
+	max = -maxint - 1
 	sum = 0
 	index_low = 0
 	index_hi = 0
@@ -27,7 +29,7 @@ def enum_max_sub(array):
 				index_lo = i
 				index_hi = j					
 				
-				#reset sum
+			#reset sum
 			sum = 0
 	# print the max subarray itself before returning from function
 	print 'The maximum subarray is: { ',	

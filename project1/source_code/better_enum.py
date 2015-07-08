@@ -6,9 +6,10 @@
 #args:		integer array
 #returns:	max(sum of all sub arrays)
 ###############################################################################
+from sys import maxint
 
 def better_enum_max_sub(array):
-	max = 0
+	max = -maxint - 1
 	index_lo = 0
 	index_hi = 0
 	#for each combination of i & j where i < j
