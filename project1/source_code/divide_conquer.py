@@ -44,11 +44,3 @@ def divide_conquer_max_sub(array, array_len):
 	ans = max(left_max_sub, right_max_sub)
 
 	return max(ans, left_sum + right_sum)
-
-#example array from assignment - used to test algorithm.
-testArray = [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
-
-print 'Testing Divide and Conquer Algorithm on Array:'
-print testArray, '\n'
-result = divide_conquer_max_sub(testArray, len(testArray))
-print 'The sum of the maximum subarray is: ', result, '\n'

@@ -34,15 +34,6 @@ def enum_max_sub(array):
 	print 'The maximum subarray is: { ',	
 	for i in range(index_lo, index_hi):
 		print array[i],
-	print ' } \n'	
+	print ' }'	
 
 	return max
-
-
-#example array from assignment - used to test algorithm.
-testArray = [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
-
-print 'Testing Enumeration Function on Array:'
-print testArray, '\n'
-result = enum_max_sub(testArray)
-print 'The sum of the maximum subarray is: ', result, '\n'
