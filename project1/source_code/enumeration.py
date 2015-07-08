@@ -46,7 +46,7 @@ def enum_max_sub(array):
 	array_as_string += ']\n'
 
 	# Write to file max subarray
-	file_name = 'Results.txt'
+	file_name = 'MSS_Results.txt'
 	output_file = open(file_name, 'a')
 	output_file.write(array_as_string)
 	output_file.close()

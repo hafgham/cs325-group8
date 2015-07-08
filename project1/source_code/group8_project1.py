@@ -35,7 +35,7 @@ for i in range(0, len(strArray)):
 
 algorithms = ['Enumeration', 'Better Enumeration', 'Divide and Conquer', 'Linear Time']
 # Create file to write output to
-file_name = 'Results.txt'
+file_name = 'MSS_Results.txt'
 # Open file and if it exists and overwrite it
 output_file = open(file_name, 'w')
 output_file.write('')
