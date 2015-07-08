@@ -17,8 +17,9 @@ def divide_conquer_max_sub(array, array_len):
 
 	# Recursive cases
 	left_max_sub = divide_conquer_max_sub(array, half_array_len)
+	# Notice below that we pass array indexed starting at half_array_len
 	right_max_sub = divide_conquer_max_sub(array[half_array_len:], array_len - 
-		half_array_len)
+		half_array_len) 
 
 	# Initialize left and right sums to lowest possible int values
 	left_sum = -maxint - 1
