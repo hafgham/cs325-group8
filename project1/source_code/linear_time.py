@@ -6,7 +6,6 @@
 #args:		integer array containing AT LEAST 1 positive integer
 #returns:	maximum sum of all subarrays
 ###############################################################################
-
 def linear_max_sub(array):
 	maximum = 0
 	sum = 0

@@ -29,4 +29,18 @@ def better_enum_max_sub(array):
                 print array[i],
         print ' }'
 
+    # Build the subarray string to print to file
+	array_as_string = '['
+	for i in range(index_lo, index_hi):
+		array_as_string += str(array[i])
+		if (i + 1) < index_hi:
+			array_as_string += ', '
+	array_as_string += ']\n'
+
+	# Write to file max subarray
+	file_name = 'Results.txt'
+	output_file = open(file_name, 'a')
+	output_file.write(array_as_string)
+	output_file.close()
+
 	return max
