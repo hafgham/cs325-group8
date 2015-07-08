@@ -1,0 +1,32 @@
+===============================================================================
+CS325-400-SU2015 Project 1
+Group 8
+===============================================================================
+
+Compiling and Running Program:
+
+	There are no special instructions necessary for compiling this
+project's code as it was all done in python. This program should be invoked on
+the command line in the following way:
+
+		python group8_project1.py <name_of_file.txt>
+
+	If the assignment/project requirements are correct then <name_of_file.txt> will
+be MSS_Problems.txt. 
+-------------------------------------------------------------------------------
+
+Unpacking/Unzipping Program:
+
+	There are 5 individual python files that implement all the details and 
+requirements of this project. The files are as follows:
+	
+		enumeration.py
+		better_enum.py
+		divide_conquer.py
+		linear_time.py
+		group8_project1.py
+
+	All of these files should be present after unpacking/unzipping the project. 
+Please make sure that all 5 of these files are in the current working directory
+when invoking the command to run the program that was mentioned earlier.
+-------------------------------------------------------------------------------
