@@ -10,26 +10,26 @@ from sys import maxint
 def enum_max_sub(array):
 	#make max most negative possible int value
 	max = -maxint - 1
-	sum = 0
 	index_low = 0
 	index_hi = 0
 	#for each combination of i & j bounded by the length of the array
 	for i in range(0, len(array)):
 		for j in range(0, len(array)):
 			#for non-negative ranges
+			sum = 0
 			if i <= j:
 				#summation of all values contained between i & j
-				for k in range(i, j):
+				for k in range(i, j+1):
 					sum = sum + array[k]
 			#if new sum is larger than all previous, save
 			#along with the current lo and hi indices
-			if max < sum:
+			if sum > max:
 				max = sum
 				index_lo = i
 				index_hi = j					
 				
 			#reset sum
-			sum = 0
+			
 
 	# print the max subarray itself before returning from function
 	print 'The maximum subarray is: { ',	
