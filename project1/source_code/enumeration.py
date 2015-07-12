@@ -26,7 +26,7 @@ def enum_max_sub(array):
 			if sum > max:
 				max = sum
 				index_lo = i
-				index_hi = j					
+				index_hi = j+1					
 				
 			#reset sum
 			
