@@ -60,10 +60,10 @@ for i in range(0, len(testArrays)):
 			output_file.write('%d\n' % result)
 			output_file.close()
 		elif(j == 2):
-			result = divide_conquer_max_sub(testArrays[i], len(testArrays[i]))
+			result = divide_conquer_max_sub(testArrays[i])
 			print 'The sum of the maximum subarray is: ', result, '\n'
 			output_file = open(file_name, 'a')
-			output_file.write('%d\n' % result)
+			output_file.write('%d\n' % result[2])
 			output_file.close()
 		elif(j == 3):
 			result = linear_max_sub(testArrays[i])
