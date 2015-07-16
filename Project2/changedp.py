@@ -43,7 +43,7 @@ for i in range(len(result[1])):
 	print 'Number of value', test[i], 'coins is:', result[1][i]
 print
 test = [1, 3, 7, 12]
-print 'test for v = [1, 2, 4, 8] and A = 15 returns:'
+print 'test for v = [1, 3, 7, 12] and A = 29 returns:'
 result = changedp(test, 29)
 pprint.pprint(changedp(test, 29))
 print 'm=', result[0]
@@ -51,7 +51,7 @@ for i in range(len(result[1])):
 	print 'Number of value', test[i], 'coins is:', result[1][i]
 print
 test = [1, 3, 7, 12]
-print 'test for v = [1, 2, 4, 8] and A = 15 returns:'
+print 'test for v = [1, 3, 7, 12] and A = 31 returns:'
 result = changedp(test, 31)
 pprint.pprint(changedp(test, 31))
 print 'm=', result[0]
