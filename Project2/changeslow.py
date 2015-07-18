@@ -18,10 +18,10 @@ def changeslow(value, change):
 	# assigned to the 'min_coins' variable. 
 	for i in range(0, len(value)):
 		if(value[i] <= change):
-			min_coins = min(min_coins, changeslow(value, change - value[i]) + 1)
+			min_coins = min(min_coins, changeslow(value, (change - value[i])) + 1)
 	return min_coins
 
 # should return '2' when run, i.e. [0, 1, 1, 0] for this test array
-testValues = [1, 5, 10, 25]
-result = changeslow(testValues, 15)
-print result
+#testValues = [1, 5, 10, 25]
+#result = changeslow(testValues, 15)
+#print result
