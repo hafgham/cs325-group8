@@ -7,7 +7,8 @@ import pprint
 
 #function:	changegreedy
 #args:		integer array, integer
-#returns:	2 element list - first element is the number of coins, the second is an array that repressents the coins used.
+#returns:	2 element list - first element is the number of coins, the second 
+#		is an array that repressents the coins used.
 ###############################################################################
 
 def changegreedy(v, A):

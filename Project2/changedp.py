@@ -6,7 +6,8 @@ from sys import maxint
 import pprint
 #function:	changedp
 #args:		integer array, integer
-#returns:	2 element list - first element is the number of coins, the second is an array that repressents the coins used.
+#returns:	2 element list - first element is the number of coins, the second is an 
+#		array that repressents the coins used.
 ###############################################################################
 
 def changedp(v, A):
@@ -18,19 +19,30 @@ def changedp(v, A):
 	num_coins_used[0] = 0
 	#for every Amount(A) > 1, including the amount were actually iterested in
 	for i in range(1, A+1):
-		#essentially, what we are doin here is testing if the currnt coin were on is les than or equal to the current amount we're calculating(i.e. if we have a coin that has a value of 5 and we're trying to find the number of coins it takes to make 4, then we would skip that coin) an we're testing if (the number of coins it takes to make the Amount[for the current Amount less the value of the current coin] + 1) is less than the curen. If this is the case, then i means that a coin of the current value can in fact be added to that Amount and it the Amount wil lbe less than or equal to the amount that we are currently interested in. (This took me a really long time to wrap my head around)
+		#essentially, what we are doing here is testing if the current coin we're on
+		#is less than or equal to the current amount we're calculating(i.e. if we have
+		#a coin that has a value of 5 and we're trying to find the number of coins it
+		#takes to make 4, then we would skip that coin). We're also testing if (the 
+		#number of coins it takes to make the Amount[for the current Amount less the 
+		#value of the current coin] + 1) is less than the current. If this is the 
+		#case, then it means that a coin of the current value can in fact be added to
+		#that Amount and will be less than or equal to the amount that we are 
+		#currently interested in. (This took me a really long time to wrap my 
+		#head around)
 		num_coins_used[i] = maxint
 		#for every coin value
 		for j in range(0, len(v)):
 			if (i >= v[j]) and ((1+num_coins_used[i-v[j]])<num_coins_used[i]):
 				num_coins_used[i] = 1 + num_coins_used[i-v[j]]
-				#here we copy the coins used to create the amount for the subproblem
+				#here we copy the coins used to create the amount for the 
+				#subproblem
 				for k in range(len(v)):
 					selected_coins[i][k] = selected_coins[i-v[j]][k]
 				#here we increment the coin we used
 				selected_coins[i][j] = 1 + selected_coins[i][j]
 
-	#return a jagged list, the first element being the number of coins used for A, the second being a list of which coins are used
+	#return a jagged list, the first element being the number of coins used for A, 
+	#the second being a list of which coins are used
 	return [num_coins_used[A], selected_coins[A]]
 
 
