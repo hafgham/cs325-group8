@@ -51,7 +51,7 @@ print "changeArray = ", changeArray
 algorithms = ['Brute Force', 'Greedy', 'Dynamic Programming']
 # Create file to write output to
 file_name = file_name.split(".")[0].split("/")[-1]
-file_name = file_name + 'change.txt'
+file_name += 'change.txt'
 # Open file and if it exists and overwrite it
 output_file = open(file_name, 'w')
 output_file.write('')
@@ -63,19 +63,19 @@ for i in range(0, len(changeArray)):
 	output_file.close()
 	for j in range(0, len(algorithms)):
 		print 'Testing Algorithm: ' + algorithms[j] + ' on Array ', i+1
-		if(j == 0):
+		if j == 0:
 			result = changeslow(valueArray[i], changeArray[i])
 			print 'Minimum coins for Brute Force: ', result, '\n'
 			output_file = open(file_name, 'a')
-			output_file.write('%d\n' % result)
+			output_file.write('%s\n' % result)
 			output_file.close()
-		elif(j == 1):
+		elif j == 1:
 			result = changegreedy(valueArray[i], changeArray[i])
 			print 'Minimum coins for Greedy: ', result, '\n'
 			output_file = open(file_name, 'a')
 			output_file.write('%s\n' % result)
 			output_file.close()
-		elif(j == 2):
+		elif j == 2:
 			result = changedp(valueArray[i], changeArray[i])
 			print 'Minimum coins for Dynamic Programming: ', result, '\n'
 			output_file = open(file_name, 'a')
