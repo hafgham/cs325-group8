@@ -59,7 +59,7 @@ output_file.write('')
 # Loop through all our arrays that we are to test and test them with each algo
 for i in range(0, len(changeArray)):
 	output_file = open(file_name, 'a')
-	output_file.write('\n========== Array %d Results ==========\n' % i+1)
+	output_file.write('\n========== Array %d Results ==========\n' % (i+1))
 	output_file.close()
 	for j in range(0, len(algorithms)):
 		print 'Testing Algorithm: ' + algorithms[j] + ' on Array ', i+1
