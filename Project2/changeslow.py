@@ -10,7 +10,7 @@ from sys import maxint
 def changeslow(value, change):
 	if change == 0:
 		return 0
-	min_coins = maxint
+	min_coins = 0
 	
 	#for each value in the array, if it's less than the amount of change 
 	#we want to make then we call changeslow() recursively, subtracting 
@@ -21,7 +21,7 @@ def changeslow(value, change):
 	used = [0 for x in range(len(value))] # initialize array to all 0's
 	for i in range(0, len(value)):
 		if(value[i] <= change):
-			min_coins = min(min_coins, changeslow(value, change - value[i]) + 1)
+			min_coins = min(min_coins, changeslow(value, change - value[i]))
 	return [min_coins, used]
 
 # should return '2' when run, i.e. [0, 1, 1, 0] for this test array
