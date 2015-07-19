@@ -6,6 +6,7 @@ from sys import maxint
 #returns:	array with number of each coin needed to make requested change,
 #		and the minimum number of coins to make change on the next line.
 ###############################################################################
+import pprint
 
 def changeslow(value, change):
 	if change == 0:
@@ -21,8 +22,9 @@ def changeslow(value, change):
 	used = [0 for x in range(len(value))] # initialize array to all 0's
 	for i in range(0, len(value)):
 		if(value[i] <= change):
-			min_coins = min(min_coins, changeslow(value, change - value[i]) + 1)
-	return [min_coins, used]
+			change = change - (value-[i])
+			min_coins = min(min_coins, changeslow(value, change) + 1)
+	return min_coins
 
 # should return '2' when run, i.e. [0, 1, 1, 0] for this test array
 #testValues = [1, 5, 10, 25]

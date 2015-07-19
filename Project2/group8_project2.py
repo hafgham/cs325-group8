@@ -64,7 +64,8 @@ for i in range(0, len(changeArray)):
 	for j in range(0, len(algorithms)):
 		print 'Testing Algorithm: ' + algorithms[j] + ' on Array ', i+1
 		if j == 0:
-			result = changeslow(valueArray[i], changeArray[i])
+			result = 'still testing...'
+			#result = changeslow(valueArray[i], changeArray[i])
 			print 'Minimum coins for Brute Force: ', result, '\n'
 			output_file = open(file_name, 'a')
 			output_file.write('%s\n' % result)
