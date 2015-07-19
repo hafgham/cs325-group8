@@ -11,8 +11,7 @@ def changeslow(value, change):
 	if change == 0:
 		return 0
 	min_coins = maxint
-	print "Passed in valueArray = ", value
-	print "Passed in changeArray = ", change
+	
 	#for each value in the array, if it's less than the amount of change 
 	#we want to make then we call changeslow() recursively, subtracting 
 	#that value from the goal value each iteration selects the minimum 

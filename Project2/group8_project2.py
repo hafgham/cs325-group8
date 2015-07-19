@@ -8,6 +8,7 @@ from sys import argv
 from sys import maxint
 from time import sleep
 import os
+import numpy as np
 
 # Open test file for assignment for reading
 file_name = argv[1]
@@ -41,7 +42,8 @@ for i in range(0, len(strArray)):
 
 valueArray = testArrays[0::2]
 changeArray = testArrays[1::2]
-#valueArray = [int(i) for i in valueArray]
+valueArray = np.asarray(valueArray)
+changeArray = np.asarray(changeArray)
 #changeArray = [int(i) for i in changeArray]
 print "valueArray = " , valueArray
 print "changeArray = ", changeArray
@@ -55,7 +57,7 @@ output_file = open(file_name, 'w')
 output_file.write('')
 
 # Loop through all our arrays that we are to test and test them with each algo
-for i in range(0, len(testArrays)):
+for i in range(0, len(changeArray)):
 	output_file = open(file_name, 'a')
 	output_file.write('\n========== Array %d Results ==========\n' % (i + 1))
 	output_file.close()
@@ -71,13 +73,13 @@ for i in range(0, len(testArrays)):
 			result = changegreedy(valueArray[i], changeArray[i])
 			print 'Minimum coins for Greedy: ', result, '\n'
 			output_file = open(file_name, 'a')
-			output_file.write('%d\n' % result)
+			output_file.write('%s\n' % result)
 			output_file.close()
 		elif(j == 2):
 			result = changedp(valueArray[i], changeArray[i])
 			print 'Minimum coins for Dynamic Programming: ', result, '\n'
 			output_file = open(file_name, 'a')
-			output_file.write('%d\n' % result[2])
+			output_file.write('%s\n' % result[2])
 			output_file.close()
 
 	# Pause for 1 seconds and print unless it is the last run of the loop		
