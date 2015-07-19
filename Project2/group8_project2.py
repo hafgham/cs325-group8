@@ -79,7 +79,7 @@ for i in range(0, len(changeArray)):
 			result = changedp(valueArray[i], changeArray[i])
 			print 'Minimum coins for Dynamic Programming: ', result, '\n'
 			output_file = open(file_name, 'a')
-			output_file.write('%s\n' % result[2])
+			output_file.write('%s\n' % result)
 			output_file.close()
 
 	# Pause for 1 seconds and print unless it is the last run of the loop		
