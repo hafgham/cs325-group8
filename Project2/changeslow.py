@@ -1,4 +1,4 @@
-#usage: python changeslow.py
+# usage: python changeslow.py
 ###############################################################################
 from sys import maxint
 #function:	changeslow
@@ -10,7 +10,7 @@ from sys import maxint
 def changeslow(value, change):
 	if change == 0:
 		return 0
-	min_coins = 0
+	min_coins = maxint
 	
 	#for each value in the array, if it's less than the amount of change 
 	#we want to make then we call changeslow() recursively, subtracting 
@@ -21,10 +21,10 @@ def changeslow(value, change):
 	used = [0 for x in range(len(value))] # initialize array to all 0's
 	for i in range(0, len(value)):
 		if(value[i] <= change):
-			min_coins = min(min_coins, changeslow(value, change - value[i]))
-	return [min_coins, used]
-
-# should return '2' when run, i.e. [0, 1, 1, 0] for this test array
-#testValues = [1, 5, 10, 25]
-#result = changeslow(testValues, 15)
-#print result
+			#change = change - value[i]
+			#used[i] = 1 + used[i]
+			min_coins = min(min_coins, changeslow(value, change - value[i]) + 1)
+	
+	# trying to return [min_coins, used] throws an error about appending a list?
+	# this at least calculates the correct minimum # of coins
+	return min_coins
