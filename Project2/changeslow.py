@@ -30,12 +30,3 @@ def changeslow(value, change):
 #testValues = [1, 5, 10, 25]
 #result = changeslow(testValues, 15)
 #print result
-=======
-			#change = change - value[i]
-			#used[i] = 1 + used[i]
-			min_coins = min(min_coins, changeslow(value, change - value[i]) + 1)
-	
-	# trying to return [min_coins, used] throws an error about appending a list?
-	# this at least calculates the correct minimum # of coins
-	return min_coins
->>>>>>> 164bd39c9e2cfedd42f69800074d2d10510e9259
