@@ -16,7 +16,7 @@ input_file = open(file_name, 'r')
 # Save all lines of test file into a set of strings
 lines = [line.translate(None, "[,]\n''") for line in input_file]
 input_file.close()
-print lines
+#print lines
 
 testArrays = []
 valueArray = []
@@ -45,8 +45,8 @@ changeArray = testArrays[1::2]
 valueArray = np.asarray(valueArray)
 changeArray = np.asarray(changeArray)
 #changeArray = [int(i) for i in changeArray]
-print "valueArray = " , valueArray
-print "changeArray = ", changeArray
+#print "valueArray = " , valueArray
+#print "changeArray = ", changeArray
 
 algorithms = ['Brute Force', 'Greedy', 'Dynamic Programming']
 # Create file to write output to
@@ -84,6 +84,6 @@ for i in range(0, len(changeArray)):
 			output_file.close()
 
 	# Pause for 1 seconds and print unless it is the last run of the loop		
-	if (i + 1) < len(testArrays):
-		print 'Testing next array in 1 second...\n'
-		sleep(1)
+#	if (i + 1) < len(testArrays):
+#		print 'Testing next array in 1 second...\n'
+#		sleep(1)
