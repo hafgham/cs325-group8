@@ -15,8 +15,11 @@ input_file = open(file_name, 'r')
 # Save all lines of test file into a set of strings
 lines = [line.translate(None, "[,]\n''") for line in input_file]
 input_file.close()
+print lines
 
 testArrays = []
+valueArray = []
+changeArray = []
 currentArray = []
 strArray = []
 # Iterate through all the lines stored from file
@@ -31,8 +34,17 @@ for i in range(0, len(strArray)):
 			currentArray.append(int(strArray[i][j]))
 
 	testArrays.append(currentArray)
+	#create new arrays only containing, the value list of coins,
+	#or the change desired for passing to our functions later easily
 	# Reset current array to empty set
 	currentArray = []
+
+valueArray = testArrays[0::2]
+changeArray = testArrays[1::2]
+#valueArray = [int(i) for i in valueArray]
+#changeArray = [int(i) for i in changeArray]
+print "valueArray = " , valueArray
+print "changeArray = ", changeArray
 
 algorithms = ['Brute Force', 'Greedy', 'Dynamic Programming']
 # Create file to write output to
@@ -50,19 +62,19 @@ for i in range(0, len(testArrays)):
 	for j in range(0, len(algorithms)):
 		print 'Testing Algorithm: ' + algorithms[j] + ' on Array ', i+1
 		if(j == 0):
-			result = changeslow(testArrays[i], testArrays[i+1])
+			result = changeslow(valueArray[i], changeArray[i])
 			print 'Minimum coins for Brute Force: ', result, '\n'
 			output_file = open(file_name, 'a')
 			output_file.write('%d\n' % result)
 			output_file.close()
 		elif(j == 1):
-			result = changegreedy(testArrays[i], testArrays[i+1])
+			result = changegreedy(valueArray[i], changeArray[i])
 			print 'Minimum coins for Greedy: ', result, '\n'
 			output_file = open(file_name, 'a')
 			output_file.write('%d\n' % result)
 			output_file.close()
 		elif(j == 2):
-			result = changedp(testArrays[i], testArrays[i+1])
+			result = changedp(valueArray[i], changeArray[i])
 			print 'Minimum coins for Dynamic Programming: ', result, '\n'
 			output_file = open(file_name, 'a')
 			output_file.write('%d\n' % result[2])
