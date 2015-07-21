@@ -22,7 +22,7 @@ def changeslow(value, change):
 	used = [0 for x in range(len(value))] # initialize array to all 0's
 	for i in range(0, len(value)):
 		if(value[i] <= change):
-			change = change - (value-[i])
+			change = change - (value[i])
 			min_coins = min(min_coins, changeslow(value, change) + 1)
 	return min_coins
 
