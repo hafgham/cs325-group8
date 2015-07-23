@@ -118,3 +118,47 @@ V1 = [1, 2, 6, 12, 24, 48, 60]
 #	t2 = datetime.datetime.now()
 #	diff = t2 - t1
 #	print i, "\t", ((diff.seconds*1000) + int(diff.microseconds/1000))
+
+
+#exe time for array size controls:
+A = 20
+increase = 2
+V1 = [1]
+###############################################################################
+
+#print 'For DP algo:'
+#print 'Size \t time'
+#for i in range(0, 100):
+#	for j in range(0, 100):
+#		#in Python, array[-1] accesses last element in list, cool!
+#		V1.append(V1[-1] + increase)
+#	t1 = datetime.datetime.now()
+#	dp1 = changedp(V1, A)
+#	t2 = datetime.datetime.now()
+#	diff = t2 - t1
+#	print len(V1), "\t", ((diff.seconds*1000) + int(diff.microseconds/1000))
+
+#print 'For Greedy algo:'
+#print 'Size \t time'
+#for i in range(0, 100):
+#	for extra_compounding_loop in range(0, 100):
+#		for j in range(0, 100):
+#			#in Python, array[-1] accesses last element in list, cool!
+#			V1.append(V1[-1] + increase)
+#	t1 = datetime.datetime.now()
+#	dp1 = changegreedy(V1, A)
+#	t2 = datetime.datetime.now()
+#	diff = t2 - t1
+#	print len(V1), "\t", ((diff.seconds*1000) + int(diff.microseconds/1000))
+
+print 'For Slow algo:'
+print 'Size \t time'
+for i in range(0, 100):
+	for j in range(0, 2):
+		#in Python, array[-1] accesses last element in list, cool!
+		V1.append(V1[-1] + increase)
+	t1 = datetime.datetime.now()
+	dp1 = changeslow(V1, A)
+	t2 = datetime.datetime.now()
+	diff = t2 - t1
+	print len(V1), "\t", ((diff.seconds*1000) + int(diff.microseconds/1000))
