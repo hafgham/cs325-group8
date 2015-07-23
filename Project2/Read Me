@@ -1,1 +1,11 @@
-Jason making changes...
+Group 8 - Project 2
+
+To run files wint a text file of pre-determined arrays and changes, use:
+python group8_project2.py <file_name>.txt
+
+This will output a file called <file_name>change.txt with your results
+
+To run the testing function used for compiling run-time data etc., use:
+python tester.py
+
+With the array of interest hard-coded into the program.
