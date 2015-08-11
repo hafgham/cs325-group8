@@ -19,9 +19,9 @@ with open("tsp_example_1.txt", "r") as text_file:
 		#add another list to the cities list (i.e. add another city)
 		cities.append([])
 		#add the information from the line ([0] is id, [1] is x, [2] is y)
-		cities[i].append(int(line.strip().split(" ")[0]))
-		cities[i].append(int(line.strip().split(" ")[1]))
-		cities[i].append(int(line.strip().split(" ")[2]))
+		cities[i].append(int(line.strip().split()[0]))
+		cities[i].append(int(line.strip().split()[1]))
+		cities[i].append(int(line.strip().split()[2]))
 		i = i + 1
 
 #2D list to hold disatances between cities, accessed by city id:
@@ -33,15 +33,9 @@ def distance(cities):
 	if len(cities) == 0:
 		return 0
 	distance = 0
-	for i in range(len(cities) - 1 ):
+	for i in range(len(cities) -1 ):
 			distance += get_distance(cities[i], cities[i+1]);			
 	return distance
-
-	
-def dist(x,y):
-	dist = 0
-	disttotal = x + y
-	return disttotal
 
 def two_opt(cities):
   for i in range(len(cities) - 1):
@@ -54,9 +48,9 @@ two_opt(cities)
 	
 
 #two_opt(distances)
-print distance(cities)
+
 for i in range(len(cities)):
 		print  cities[i]
-
+print distance(cities)
 
 #for i in range(len(distance)):
