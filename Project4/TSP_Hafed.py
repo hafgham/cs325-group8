@@ -51,12 +51,17 @@ two_opt(cities)
 cities_order = tuple(x[0] for x in cities)
 
 
-for i in range(len(cities) ):
-	print cities_order[i]
+#for i in range(len(cities) ):
+#	print cities_order[i]
 
-print distance(cities)
+#print distance(cities)
 
+#build the array as a string for printing to file
 
-#output = file_name + '.tour'
-#file = open(output, "w")
-#file.close()
+output = file_name + '.tour'
+file = open(output, "w")
+
+file.write("%i\n" % distance(cities))
+for i in range(len(cities)):
+	file.write("%i\n" % cities_order[i])
+file.close()
