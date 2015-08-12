@@ -2,9 +2,11 @@
 
 import sys, pprint;
 from math import sqrt;
+from sys import argv;
 
 #Function returns distance between two cities, rounded to float, cast to int
 
+file_name = argv[1]
 points = []
 size = 550
 def get_distance(c1, c2):
@@ -13,7 +15,7 @@ def get_distance(c1, c2):
 i = 0
 #list to hold all cities
 cities = []
-with open("tsp_example_1.txt", "r") as text_file:
+with open(file_name, "r") as text_file:
 	#for each line in file
 	for line in text_file:
 		#add another list to the cities list (i.e. add another city)
@@ -45,12 +47,16 @@ def two_opt(cities):
 
 	
 two_opt(cities)	
-	
 
-#two_opt(distances)
+cities_order = tuple(x[0] for x in cities)
 
-for i in range(len(cities)):
-		print  cities[i]
+
+for i in range(len(cities) ):
+	print cities_order[i]
+
 print distance(cities)
 
-#for i in range(len(distance)):
+
+#output = file_name + '.tour'
+#file = open(output, "w")
+#file.close()
