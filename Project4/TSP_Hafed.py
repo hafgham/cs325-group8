@@ -35,7 +35,7 @@ def distance(cities):
 	if len(cities) == 0:
 		return 0
 	distance = 0
-	for i in range(len(cities) -1 ):
+	for i in range(len(cities) - 1):
 			distance += get_distance(cities[i], cities[i+1]);			
 	return distance
 
