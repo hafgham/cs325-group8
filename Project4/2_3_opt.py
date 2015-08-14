@@ -117,9 +117,11 @@ while (((total_diff.seconds * 1000000 + total_diff.microseconds + single_run_tim
 		two_opt(cities)	
 		three_opt(cities)
 		two_opt(cities)
-	if (len(cities) >= 999):
+	if (len(cities) >= 999 and len(cities) < 2999):
 		two_opt(cities)
 		three_opt(cities)
+		two_opt(cities)
+	if (len(cities) >= 2999):
 		two_opt(cities)
 
 	new_length = distance(cities)
